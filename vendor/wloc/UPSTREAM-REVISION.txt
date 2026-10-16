@@ -1,0 +1,2 @@
+source=https://github.com/xepes0/wloc
+commit=7f28c5e4fb6b802862988735b92e5c800382f2a2

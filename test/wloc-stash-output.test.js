@@ -60,7 +60,8 @@ async function executeAsStash(script) {
 }
 
 test("Stash response scripts return top-level response fields", async () => {
-  const script = await readFile(path.resolve(workerDir, "../dist/wloc.js"), "utf8");
+  // 验证实际随仓库部署的固定版本脚本，避免误读项目目录之外的构建产物。
+  const script = await readFile(path.resolve(workerDir, "vendor/wloc/wloc.js"), "utf8");
   const payload = await executeAsStash(script);
 
   assert.equal(Object.hasOwn(payload, "response"), false);

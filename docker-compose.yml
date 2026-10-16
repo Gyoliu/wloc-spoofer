@@ -1,18 +1,20 @@
 services:
   wloc:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: wloc-selfhost:local
     container_name: wloc-spoofer
     restart: unless-stopped
     environment:
-      NODE_ENV: production
       PORT: "3000"
+      NODE_ENV: production
     ports:
       - "127.0.0.1:3000:3000"
     read_only: true
     tmpfs:
-      - /tmp
-    cap_drop:
-      - ALL
+      - /tmp:rw,nosuid,nodev,noexec,size=16m
+    cap_drop: [ALL]
     security_opt:
       - no-new-privileges:true
     pids_limit: 64

@@ -1,0 +1,5 @@
+# append to existing repository .gitignore (do NOT replace your original rules)
+node_modules/
+.env
+*.log
+.wloc-hardening-backups/

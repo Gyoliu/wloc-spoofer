@@ -1,13 +1,15 @@
 {
+  "name": "wloc-spoofer",
+  "private": true,
   "type": "module",
+  "engines": { "node": ">=22" },
   "scripts": {
-    "test": "node --test 'test/*.test.mjs'",
-    "dev": "npx wrangler dev",
-    "deploy": "npx wrangler deploy --minify",
-    "pages:dev": "npx wrangler pages dev --port 8787 -c wrangler.pages.jsonc",
-    "pages:deploy": "npx wrangler pages deploy -c wrangler.pages.jsonc"
+    "start": "node server.js",
+    "test": "node --test test/*.test.mjs test/*.test.js",
+    "check": "node --check src/index.js && node --check src/parse.js && node --check src/map-fetch.js && node --check server.js"
   },
   "dependencies": {
-    "hono": "^4.10.6"
-  },"name": "wloc-spoofer"
+    "hono": "4.10.6",
+    "@hono/node-server": "2.1.4"
+  }
 }

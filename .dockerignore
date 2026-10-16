@@ -1,0 +1,10 @@
+.git
+node_modules
+.wloc-hardening-backups
+vendor
+public
+nginx
+scripts
+test
+*.zip
+*.log
